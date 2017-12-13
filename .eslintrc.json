@@ -1,0 +1,31 @@
+{
+  "plugins": [
+    "standard",
+    "promise",
+    "json",
+    "babel"
+  ],
+  "parser": "babel-eslint",
+  "extends": [
+    "standard"
+  ],
+  "rules": {
+    "semi": 0,
+    "no-extra-semi": 0,
+    "indent": [
+      "error",
+      4
+    ],
+    "no-unused-vars": 1,
+    "space-before-function-paren": 0,
+    "keyword-spacing": 0,
+    "handle-callback-err": 0,
+    "no-useless-escape": 0,
+    "no-cond-assign": 0,
+    "no-control-regex": 0,
+    "comma-dangle": [
+      "warn",
+      "always-multiline"
+    ]
+  }
+}

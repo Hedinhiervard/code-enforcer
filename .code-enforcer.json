@@ -1,0 +1,15 @@
+{
+    "jsFiles": {
+        "include": [ "src/**/*.js" ]
+    },
+    "jsonFiles": {
+        "include": [ "./**/*.json" ],
+        "ignore": [
+            "./node_modules/**",
+            "./doc/**"
+        ]
+    },
+    "disableRules": {
+        "console-calls": [ "src/cli.js" ]
+    }
+}

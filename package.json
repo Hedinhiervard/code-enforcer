@@ -1,0 +1,51 @@
+{
+  "name": "code-enforcer",
+  "version": "0.0.2",
+  "description": "Allows configurable enforcing of strict coding practices. Usable in unit tests",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "yarn start",
+    "build": "babel src --out-dir dist",
+    "prepublish": "yarn build",
+    "start": "babel-node src/cli.js",
+    "precommit": "yarn build && yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hedinhiervard/code-enforcer.git"
+  },
+  "author": "hedin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hedinhiervard/code-enforcer/issues"
+  },
+  "homepage": "https://github.com/Hedinhiervard/code-enforcer#readme",
+  "dependencies": {
+    "babel-cli": "6",
+    "babel-eslint": "8.0.3",
+    "babel-plugin-resolver": "1.1.0",
+    "babel-preset-env": "1.6.1",
+    "basename": "0.1.2",
+    "chalk": "2.3.0",
+    "esdoc": "1.0.4",
+    "esdoc-ecmascript-proposal-plugin": "1.0.0",
+    "esdoc-standard-plugin": "1.0.0",
+    "eslint": "4.13.1",
+    "eslint-config-standard": "11.0.0-beta.0",
+    "eslint-plugin-babel": "4.1.2",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-json": "1.2.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "glob": "7.1.2",
+    "husky": "0.14.3",
+    "jsonlint": "1.6.2",
+    "spawn-promise": "0.1.7",
+    "yargs": "10.0.3"
+  },
+  "bin": {
+    "code-enforcer": "dist/cli.js"
+  },
+  "devDependencies": {}
+}
