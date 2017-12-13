@@ -1,6 +1,6 @@
 {
   "name": "code-enforcer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Allows configurable enforcing of strict coding practices. Usable in unit tests",
   "main": "dist/index.js",
   "scripts": {
