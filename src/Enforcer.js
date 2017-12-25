@@ -3,7 +3,6 @@ import { multiGlobSync, checkStringForRegexp } from 'util'
 import spawnPromise from 'spawn-promise'
 import path from 'path'
 import fs from 'fs'
-import { CLIEngine } from 'eslint'
 import basename from 'basename'
 import jsonlint from 'jsonlint'
 
@@ -167,34 +166,6 @@ export default class Enforcer {
     }
 
     /**
-     * Runs `eslint` on all `.js` files
-     */
-    runESLint() {
-        const engine = new CLIEngine({
-            useEslintrc: true,
-        });
-
-        const results = engine.executeOnFiles(this.jsFiles.map(file => file.name)).results;
-
-        for(const result of results) {
-            const filePath = result.filePath
-            const messages = result.messages;
-            for(const message of messages) {
-                this.errors.push({
-                    file: {
-                        name: filePath,
-                        content: fs.readFileSync(filePath, 'utf-8'),
-                    },
-                    problem: message.message.slice(0, -1) + ' - ' + message.ruleId,
-                    solution: 'run eslint --fix',
-                    lineNumber: message.line,
-                    columnNumber: message.column,
-                });
-            }
-        }
-    }
-
-    /**
      * Performs all the checks
      */
     async run() {
@@ -214,7 +185,6 @@ export default class Enforcer {
                 rule.check(file, this.options, this.errors)
             }
         }
-        this.runESLint();
         this.runJSONLint();
         this.checkPackageJSON();
     }
