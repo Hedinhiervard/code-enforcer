@@ -2,12 +2,11 @@
   "presets": [ "env" ],
   "plugins":
 	  [
-	  ["resolver",
+	  ["module-resolver",
 		{
-			"resolveDirs":
+			"root":
 				[
 				"./src",
-				"./node_modules"
 				]
 		}
 	  ]

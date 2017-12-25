@@ -67,7 +67,7 @@ export default class Enforcer {
      */
 
     loadRules() {
-        const files = multiGlobSync(['src/rules/*.js']);
+        const files = multiGlobSync([path.join(__dirname, 'rules', '*.js')]);
 
         for(const file of files) {
             this.rules[basename(file)] = require(path.resolve(file));

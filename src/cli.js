@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import 'babel-polyfill'
 import yargs from 'yargs'
 import path from 'path'
 import fs from 'fs'
@@ -109,6 +110,10 @@ function printMessages(arr) {
  * Main Function
  */
 (async function() {
+    process.on('unhandledRejection', (reason, p) => {
+        console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+    });
+
     let options
 
     try {
